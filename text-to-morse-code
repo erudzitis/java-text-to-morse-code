@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Class_5 {
+
+	static void morseCode(String vards) {
+		String[][]Burti= { {"a","*-"},
+				   {"b", "-***"},
+					{"c", "-*-*"},
+					{"d", "-**"},
+					{"e", "*"},
+					{"f", "**-*"},
+					{"g", "--*"},
+					{"h", "****"},
+					{"i", "**"},
+					{"j", "*---"},
+					{"k", "-*-"},
+					{"l", "*-**"},
+					{"m", "--"},
+					{"n", "-*"},
+					{"o", "---"},
+					{"p", "*--*"},
+					{"r", "*-*"},
+					{"s", "***"},
+					{"t", "-"},
+					{"u", "**-"},
+					{"v", "***-"},
+					{"z", "--**"}
+					};
+		
+		vards = vards.toLowerCase();
+		
+		// Need to create array in order to have the word split into letters
+		String[] sadalits_vards = vards.split("");
+		String[] output = new String[sadalits_vards.length];
+
+		for (int i = 0; i < sadalits_vards.length; i++) {
+			for (int j = 0; j < Burti.length; j++) {
+				if (sadalits_vards[i].equals(Burti[j][0])) {
+					output[i] = Burti[j][1];
+			}
+			}
+		}	
+		
+		for (int k = 0; k < output.length; k++)	{
+			System.out.print(output[k] + " ");
+		}
+
+	}
+
+
+public static void main(String args[]) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter your name: ");
+	
+	String vards = sc.nextLine();
+	morseCode(vards);
+		
+	}
+	
+	
+}
+
